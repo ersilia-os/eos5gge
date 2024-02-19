@@ -1,9 +1,14 @@
 {
-    "Identifier": "",
-    "Slug": "",
-    "Status": "",
-    "Title": "",
-    "Description": "",
+    "Identifier": "eos5gge",
+    "Slug": "DILI-predictor",
+    "Status": "In progress",
+    "Title": "Early prediction of Drug-Induced Liver Injury",
+    "Description": [
+        "The DILI-Predictor predicts 11 features related to DILI toxicity",
+        "including _in-vivo_ and _in-vitro_ and physicochemical parameters. It has been developed by the Broad Institute",
+        "using the DILIst dataset (1020 compounds) from the FDA",
+        "and achieved an accuracy balance of 70% on a test set of 255 compounds held out from the same dataset. The authors show how the model can correctly predict compounds that are not toxic in human despite being toxic in mice."
+    ],
     "Mode": "",
     "Task": [],
     "Input": [],
@@ -12,8 +17,11 @@
     "Output Type": [],
     "Output Shape": "",
     "Interpretation": "",
-    "Tag": [],
-    "Publication": "",
-    "Source Code": "",
-    "License": ""
+    "Tag": [
+        "Toxicity",
+        "Metabolism"
+    ],
+    "Publication": "https://www.biorxiv.org/content/10.1101/2024.01.10.575128v1.full",
+    "Source Code": "https://github.com/srijitseal/DILI",
+    "License": "MIT"
 }
