@@ -1,0 +1,11 @@
+name,type,direction,description
+dili,float,high,Classification score for drug-induced liver injury data
+diverse_dili_c,float,high,Classification score for transient liver function abnormalities from Diverse DILI dataset C
+besp,float,high,Classification score for bile salt export pump inhibition related to liver toxicity
+mitotox,float,high,Classification score for mitochondrial toxicity leading to cellular energy failure
+reactive_metabolite,float,high,Classification score for formation of reactive metabolites causing liver protein damage
+human_hepatotoxicity,float,high,Classification score for hepatotoxic effects observed in human studies
+animal_hepatotoxicity_a,float,high,Classification score for hepatic histopathologic effects from chronic animal studies
+animal_hepatotoxicity_b,float,high,Classification score for hepatocellular hypertrophy effects in animals
+preclinical_hepatotoxicity,float,high,Classification score for comprehensive preclinical hepatotoxicity assessment
+diverse_dili_a,float,high,Classification score for diverse DILI dataset A encompassing heterogeneous liver toxicity data

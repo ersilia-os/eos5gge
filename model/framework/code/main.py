@@ -2,13 +2,11 @@
 import os
 import csv
 import sys
-from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
+import pandas as pd
 
 # parse arguments
 input_file = sys.argv[1]
 output_file = sys.argv[2]
-
 
 root = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(root)
@@ -30,8 +28,17 @@ for s in smiles_list:
     print(r)
     R += [r]
 
-
-import pandas as pd
-
+# save results to .csv file
 df = pd.concat(R)
+
+with open(os.path.join(root, "..", "columns", "run_columns.csv"), "r") as f:
+    reader = csv.reader(f)
+    next(reader)
+    columns = [r[0] for r in reader]
+
+rename = {}
+for i, c in enumerate(list(df.columns)):
+    rename[c] = columns[i]
+
+df = df.rename(columns=rename)
 df.to_csv(output_file, index=False)
