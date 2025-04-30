@@ -34,6 +34,7 @@ from constants import (
 
 MODELPATH = os.path.join(root, "..", "..", "checkpoints")
 FEATURESPATH = os.path.join(root, "..", "..", "checkpoints", "features")
+IMPUTERPATH = os.path.join(root, "..", "..", "checkpoints", "imputer.joblib")
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -285,7 +286,32 @@ def calc_all_fp_desc(data):
         axis=1,
     )
 
-    return tox_model_data
+    # has_nans = tox_model_data.isna().any()
+    # print(has_nans[has_nans == True])
+    
+    import joblib
+    imputer = joblib.load(IMPUTERPATH)
+    
+    cols = list(tox_model_data.columns)[1:]
+
+    df = tox_model_data[cols]
+    print(df.shape)
+
+    df = imputer.transform(df)
+    print(df.shape)
+
+    df_0 = pd.DataFrame({"smiles_r": list(tox_model_data["smiles_r"])})
+    df_1 = pd.DataFrame(df, columns=cols)
+
+    print(df_0.shape)
+    print(df_1.shape)
+
+    has_nans = df_1.isna().any()
+    print("HERE")
+    print(has_nans[has_nans == True])
+
+    return pd.concat([df_0, df_1], axis=1)
+
 
 
 liv_data = LIV_DATA
@@ -298,8 +324,14 @@ def predict_individual_liv_data(data_dummy, features, endpoint):  # predict anim
     ) as f:
         loaded_rf = pickle.load(f)
 
+    print("A")
+    print(data_dummy.shape)
     X = data_dummy[features]
+    print(X)
     X = X.values
+    print("B")
+    print(X)
+    print(X.shape)
     y_proba = loaded_rf.predict_proba(X)[:, 1]
 
     return y_proba
@@ -332,6 +364,10 @@ def predict_liv_all(data):
     features = features[:-1]
 
     data_dummy = data
+
+    print(data.shape)
+    has_nans = data.isna().any()
+    print(has_nans[has_nans == True])
 
     for endpoint in liv_data:
         # print(endpoint)
@@ -407,6 +443,8 @@ class DILIPRedictor:
             os.path.join(FEATURESPATH, "all_features_desc.csv"),
             encoding="windows-1252",
         )
+
+
         source = SOURCE
         assaytype = ASSAY_TYPE
 
@@ -437,6 +475,9 @@ class DILIPRedictor:
         molecule = Chem.MolFromSmiles(smiles_r)
 
         test_mfp_Mordred = calc_all_fp_desc(test)
+        print("HERE 2")
+        print(test_mfp_Mordred)
+        print(test_mfp_Mordred.shape)
         test_mfp_Mordred_liv = predict_liv_all(test_mfp_Mordred)
         test_mfp_Mordred_liv_values = test_mfp_Mordred_liv.T.reset_index().rename(
             columns={"index": "name", 0: "value"}
