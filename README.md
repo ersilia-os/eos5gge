@@ -44,13 +44,18 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos5gge](https://hub.docker.com/r/ersiliaos/eos5gge)
-- **Docker Architecture:** `AMD64`, `ARM64`
+- **Docker Architecture:** `AMD64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `67`
 - **Environment Size (Mb):** `867`
+- **Image Size (Mb):** `923.16`
 
+**Computational Performance (seconds):**
+- 4 inputs: `48.22`
+- 20 inputs: `179.93`
+- 100 inputs: `1151.97`
 
 ### References
 - **Source Code**: [https://github.com/Manas02/dili-pip](https://github.com/Manas02/dili-pip)
