@@ -286,6 +286,8 @@ def calc_all_fp_desc(data):
         axis=1,
     )
 
+    # print(tox_model_data)
+
     # has_nans = tox_model_data.isna().any()
     # print(has_nans[has_nans == True])
     
@@ -295,20 +297,24 @@ def calc_all_fp_desc(data):
     cols = list(tox_model_data.columns)[1:]
 
     df = tox_model_data[cols]
-    print(df.shape)
+    # print(df.shape)
 
     df = imputer.transform(df)
-    print(df.shape)
+    # print(df.shape)
 
     df_0 = pd.DataFrame({"smiles_r": list(tox_model_data["smiles_r"])})
     df_1 = pd.DataFrame(df, columns=cols)
 
-    print(df_0.shape)
-    print(df_1.shape)
+    # print(df_0.shape)
+    # print(df_1.shape)
 
-    has_nans = df_1.isna().any()
-    print("HERE")
-    print(has_nans[has_nans == True])
+    # has_nans = df_1.isna().any()
+    # print("HERE")
+    # print(has_nans[has_nans == True])
+
+    # print(df_0.shape)
+    # print(df_1.shape)
+    # print(pd.concat([df_0, df_1], axis=1).shape)
 
     return pd.concat([df_0, df_1], axis=1)
 
@@ -324,14 +330,14 @@ def predict_individual_liv_data(data_dummy, features, endpoint):  # predict anim
     ) as f:
         loaded_rf = pickle.load(f)
 
-    print("A")
-    print(data_dummy.shape)
+    # print("A")
+    # print(data_dummy.shape)
     X = data_dummy[features]
-    print(X)
+    # print(X)
     X = X.values
-    print("B")
-    print(X)
-    print(X.shape)
+    # print("B")
+    # print(X)
+    # print(X.shape)
     y_proba = loaded_rf.predict_proba(X)[:, 1]
 
     return y_proba
@@ -365,9 +371,9 @@ def predict_liv_all(data):
 
     data_dummy = data
 
-    print(data.shape)
-    has_nans = data.isna().any()
-    print(has_nans[has_nans == True])
+    # print(data.shape)
+    # has_nans = data.isna().any()
+    # print(has_nans[has_nans == True])
 
     for endpoint in liv_data:
         # print(endpoint)
@@ -475,9 +481,9 @@ class DILIPRedictor:
         molecule = Chem.MolFromSmiles(smiles_r)
 
         test_mfp_Mordred = calc_all_fp_desc(test)
-        print("HERE 2")
-        print(test_mfp_Mordred)
-        print(test_mfp_Mordred.shape)
+        # print("HERE 2")
+        # print(test_mfp_Mordred)
+        # print(test_mfp_Mordred.shape)
         test_mfp_Mordred_liv = predict_liv_all(test_mfp_Mordred)
         test_mfp_Mordred_liv_values = test_mfp_Mordred_liv.T.reset_index().rename(
             columns={"index": "name", 0: "value"}

@@ -239,6 +239,12 @@ def calc_all_fp_desc(data):
     calc = Calculator(descriptors, ignore_3D=True)
     logger.debug(f"Calculated {len(calc.descriptors)} Descriptors")
     Ser_Mol = data["smiles_r"].apply(Chem.MolFromSmiles)
+
+    # Keep only valid molecules
+    valid_idx = Ser_Mol.notna()
+    Ser_Mol = Ser_Mol[valid_idx]
+    data = data.loc[valid_idx].reset_index(drop=True)
+
     # as pandas
     Mordred_table = calc.pandas(Ser_Mol)
     Mordred_table = Mordred_table.astype("float")
@@ -290,7 +296,7 @@ with open(DATA_PATH, "r") as f:
     for r in reader:
         smiles_list += [r[0]]
 
-data = {"smiles_r": smiles_list[:100]}
+data = {"smiles_r": smiles_list}
 data = pd.DataFrame(data)
 
 df = calc_all_fp_desc(data)
