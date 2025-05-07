@@ -41,8 +41,8 @@
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos5gge",
     "Docker Architecture": "AMD64",
-    "Docker Pack Method": "FastAPI",
     "Model Size": 67.0,
     "Environment Size": 867.0,
-    "Image Size": 923.16
+    "Image Size": 923.16,
+    "Docker Pack Method": "FastAPI"
 }
