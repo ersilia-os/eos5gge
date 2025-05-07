@@ -52,6 +52,10 @@ Below are the **Output Columns** of the model:
 - **Environment Size (Mb):** `867`
 - **Image Size (Mb):** `923.16`
 
+**Computational Performance (seconds):**
+- 10 inputs: `36.85`
+- 100 inputs: `962.01`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [https://github.com/Manas02/dili-pip](https://github.com/Manas02/dili-pip)
