@@ -22,10 +22,10 @@ with open(input_file, "r") as f:
 R = []
 dp = DILIPRedictor()
 for s in smiles_list:
+    result = dp.predict(s)
     r = dp.predict(s)
     r = r[["source", "value"]]
     r = r.set_index('source').T
-    print(r)
     R += [r]
 
 # save results to .csv file
