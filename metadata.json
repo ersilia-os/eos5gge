@@ -38,16 +38,20 @@
     "License": "None",
     "Contributor": "Zainab-ik",
     "Incorporation Date": "2024-02-19",
+    "Last Packaging Date": "2025-07-31",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos5gge",
-    "Docker Architecture": "AMD64",
+    "Docker Architecture": [
+        "AMD64",
+        "ARM64"
+    ],
     "Model Size": 13.0,
     "Environment Size": 1904.0,
-    "Image Size": 1104.68,
-    "Computational Performance 1": 36.74,
-    "Computational Performance 2": 186.88,
-    "Computational Performance 3": 1005.44,
-    "Computational Performance 4": -1.0,
+    "Image Size": 2044.53,
+    "Computational Performance 1": 28.29,
+    "Computational Performance 2": 27.59,
+    "Computational Performance 3": 120.64,
+    "Computational Performance 4": 1095.03,
     "Computational Performance 5": -1.0,
     "Docker Pack Method": "FastAPI"
 }
