@@ -2,8 +2,7 @@
 
 The DILI-Predictor predicts 10 features related to DILI toxicity including in-vivo and in-vitro and physicochemical parameters. It has been developed by the Broad Institute using the DILIst dataset (1020 compounds) from the FDA and achieved an accuracy balance of 70% on a test set of 255 compounds held out from the same dataset. The authors show how the model can correctly predict compounds that are not toxic in human despite being toxic in mice.
 
-This model was incorporated on 2024-02-19.
-
+This model was incorporated on 2024-02-19.Last packaged on 2025-07-31.
 
 ## Information
 ### Identifiers
@@ -45,17 +44,17 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos5gge](https://hub.docker.com/r/ersiliaos/eos5gge)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `13`
 - **Environment Size (Mb):** `1904`
-- **Image Size (Mb):** `1104.68`
+- **Image Size (Mb):** `2044.53`
 
 **Computational Performance (seconds):**
-- 10 inputs: `36.74`
-- 100 inputs: `1005.44`
+- 10 inputs: `28.29`
+- 100 inputs: `120.64`
 - 10000 inputs: `-1`
 
 ### References
