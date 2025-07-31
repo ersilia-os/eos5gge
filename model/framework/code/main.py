@@ -3,6 +3,7 @@ import os
 import csv
 import sys
 import pandas as pd
+import numpy as np
 
 # parse arguments
 input_file = sys.argv[1]
@@ -21,12 +22,16 @@ with open(input_file, "r") as f:
 
 R = []
 dp = DILIPRedictor()
+sources = ['DILI', 'Diverse DILI C', 'BESP', 'Mitotox', 'Reactive Metabolite', 'Human hepatotoxicity', 'Animal hepatotoxicity A', 'Animal hepatotoxicity B', 'Preclinical hepatotoxicity', 'Diverse DILI A']
 for s in smiles_list:
-    result = dp.predict(s)
-    r = dp.predict(s)
-    r = r[["source", "value"]]
-    r = r.set_index('source').T
-    R += [r]
+    try:
+        r = dp.predict(s)
+        r = r[["source", "value"]]
+        r = r.set_index('source').T
+        R += [r]
+    except:
+        r = pd.DataFrame([[np.nan]*len(sources)], columns=sources)
+        R += [r]
 
 # save results to .csv file
 df = pd.concat(R)
