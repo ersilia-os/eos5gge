@@ -2,7 +2,7 @@
 
 The DILI-Predictor predicts 10 features related to DILI toxicity including in-vivo and in-vitro and physicochemical parameters. It has been developed by the Broad Institute using the DILIst dataset (1020 compounds) from the FDA and achieved an accuracy balance of 70% on a test set of 255 compounds held out from the same dataset. The authors show how the model can correctly predict compounds that are not toxic in human despite being toxic in mice.
 
-This model was incorporated on 2024-02-19.Last packaged on 2025-07-31.
+This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
 
 ## Information
 ### Identifiers
@@ -50,11 +50,11 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `13`
 - **Environment Size (Mb):** `1944`
-- **Image Size (Mb):** `2044.53`
+- **Image Size (Mb):** `2080.45`
 
 **Computational Performance (seconds):**
-- 10 inputs: `28.29`
-- 100 inputs: `120.64`
+- 10 inputs: `29.48`
+- 100 inputs: `123.08`
 - 10000 inputs: `-1`
 
 ### References
