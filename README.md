@@ -59,7 +59,7 @@ Below are the **Output Columns** of the model:
 
 ### References
 - **Source Code**: [https://github.com/Manas02/dili-pip](https://github.com/Manas02/dili-pip)
-- **Publication**: [https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00015](https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00015)
+- **Publication**: [https://doi.org/10.1021/acs.chemrestox.4c00015](https://doi.org/10.1021/acs.chemrestox.4c00015)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2024`
 - **Ersilia Contributor:** [Zainab-ik](https://github.com/Zainab-ik)
