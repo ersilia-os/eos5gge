@@ -1,6 +1,6 @@
 # Early prediction of Drug-Induced Liver Injury
 
-The DILI-Predictor predicts 10 features related to DILI toxicity including in-vivo and in-vitro and physicochemical parameters. It has been developed by the Broad Institute using the DILIst dataset (1020 compounds) from the FDA and achieved an accuracy balance of 70% on a test set of 255 compounds held out from the same dataset. The authors show how the model can correctly predict compounds that are not toxic in human despite being toxic in mice.
+Scores drug-induced liver injury risk across ten related endpoints, the leading toxicity reason for withdrawing approved medicines. Seal and colleagues improved detection by combining structural features with predicted in vitro readouts, including cell-painting morphology and mitochondrial toxicity, so that the model reasons from biological consequence as well as chemistry. The authors set an activity threshold of 0.16 for the principal endpoint rather than the conventional midpoint, reflecting the imbalance in the underlying data.
 
 This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
 ### Output
 - **Output Dimension:** `10`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Prediction of 10 DILI-related endpoints. The most important is the first, DILI. Threshold for DILI active is set at 0.16 by the authors.
+- **Interpretation:** Probabilities across ten liver injury endpoints, with the principal DILI threshold set at 0.16.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
