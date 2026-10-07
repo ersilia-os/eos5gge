@@ -1,6 +1,6 @@
 # Early prediction of Drug-Induced Liver Injury
 
-Scores drug-induced liver injury risk across ten related endpoints, the leading toxicity reason for withdrawing approved medicines. Seal and colleagues improved detection by combining structural features with predicted in vitro readouts, including cell-painting morphology and mitochondrial toxicity, so that the model reasons from biological consequence as well as chemistry. The authors set an activity threshold of 0.16 for the principal endpoint rather than the conventional midpoint, reflecting the imbalance in the underlying data.
+Scores drug-induced liver injury risk across ten linked endpoints, a leading cause of drug withdrawal. Seal and colleagues first predict nine proxy-DILI labels from in vitro and in vivo hepatotoxicity data, among them mitochondrial toxicity and bile salt export pump inhibition, then feed them alongside structural and physicochemical features into the DILI classifier, trained on 888 compounds and tested on 223 held out. It separates compounds hepatotoxic in animals but not in humans, such as 2-butoxyethanol. Held-out performance is modest, so the scores rank compounds rather than decide them.
 
 This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
 ### Output
 - **Output Dimension:** `10`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probabilities across ten liver injury endpoints, with the principal DILI threshold set at 0.16.
+- **Interpretation:** Probabilities across ten liver injury endpoints, with the principal DILI call thresholded at 0.612911.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
