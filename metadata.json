@@ -39,7 +39,7 @@
     "Contributor": "Zainab-ik",
     "Incorporation Date": "2024-02-19",
     "Last Packaging Date": "2025-12-01",
-    "Release": "v1.0.1",
+    "Release": "v1.0.2",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos5gge",
     "Docker Architecture": [
