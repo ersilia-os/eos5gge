@@ -2,7 +2,8 @@
 
 Scores drug-induced liver injury risk across ten linked endpoints, a leading cause of drug withdrawal. Seal and colleagues first predict nine proxy-DILI labels from in vitro and in vivo hepatotoxicity data, among them mitochondrial toxicity and bile salt export pump inhibition, then feed them alongside structural and physicochemical features into the DILI classifier, trained on 888 compounds and tested on 223 held out. It separates compounds hepatotoxic in animals but not in humans, such as 2-butoxyethanol. Held-out performance is modest, so the scores rank compounds rather than decide them.
 
-This model was incorporated on 2024-02-19.Last packaged on 2025-12-01.
+This model was incorporated on 2024-02-19.
+Last packaged on 2025-12-01.
 
 ## Information
 ### Identifiers
@@ -46,6 +47,7 @@ Below are the **Output Columns** of the model:
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos5gge](https://hub.docker.com/r/ersiliaos/eos5gge)
 - **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos5gge.zip)
+- **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos5gge_v1.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos5gge_v1.sif)
 
 ### Resource Consumption
 - **Model Size (Mb):** `13`
